@@ -1,12 +1,12 @@
 pipeline {
     agent {
         docker {
-            image 'node:9.8.0'
+            image 'node:8'
             args '-p 3000:3000'
         }
     }   
     environment { 
-        CI = 'true'
+        NODE_ENV= 'production'
     }
     stages {
         stage('Build') {
